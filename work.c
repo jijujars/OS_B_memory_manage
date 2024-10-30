@@ -9,17 +9,22 @@ int stack(int x) {
 }
 
 int main(){
-    printf("level : x is at %p\n", (void*)&a);
-    printf("level : x is at %p\n", (void*)&b);
-    printf("level : x is at %p\n", (void*)&c);
+    printf("DATA :");
+    printf("level 2: x is at %p\n", (void*)&a);
+    printf("level 1: x is at %p\n", (void*)&b);
+    printf("level 0: x is at %p\n", (void*)&c);
+    printf("STACK :");
     stack(4);
+    
     int* i = malloc(sizeof(int));
     int* j = malloc(sizeof(int));
     int* k = malloc(sizeof(int));
-    printf("level : x is at %p\n", (void*)i);
-    printf("level : x is at %p\n", (void*)j);
-    printf("level : x is at %p\n", (void*)k);
+    printf("HEAP :");
+    printf("level 2: x is at %p\n", (void*)i);
+    printf("level 1: x is at %p\n", (void*)j);
+    printf("level 0: x is at %p\n", (void*)k);
     return 0;
+    
     free(i);
     free(j);
     free(k);
